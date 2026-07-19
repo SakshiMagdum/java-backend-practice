@@ -1,0 +1,78 @@
+import java.util.Scanner;
+
+public class userInput {
+    public static void main(String[] args) {
+
+        //Scanner is an object that allows us to accept user input in java
+        //To use Scanner we need to import it from utilities package
+
+        Scanner scanner = new Scanner(System.in);
+        //created object of scanner
+
+        //Scanner object has built-in methods to accept different types of inputs/data types
+        System.out.print("Enter your name: ");
+        String name = scanner.nextLine();
+        //nextLine reads a string of characters including any spaces
+        //next doesn't read spaces
+
+        //To read integer the method is nextInt()
+        System.out.print("Enter your age: ");
+        int age = scanner.nextInt();
+
+        System.out.print("What is your cgpa: ");
+        double cgpa = scanner.nextDouble();
+        //To accept decimal number use nextDouble() method
+
+        //To accept boolean
+        System.out.print("Are you a student? (true/false): ");
+        boolean isStudent = scanner.nextBoolean();
+
+        System.out.println("Hello, " + name);
+        System.out.println("You are " + age + " years old.");
+        System.out.println("Your cgpa is " + cgpa);
+        System.out.println("Student: " + isStudent);
+
+        //Now Using if statement for boolean
+        if(isStudent){
+            System.out.println("You are enrolled as a student");
+        }
+        else{
+            System.out.println("You are NOT enrolled as a student");
+        }
+
+        //Common issue
+        //If you use a nextLine() method after nextInt() or nextDouble() method the nextLine() will not take the input
+        //Because nextLine() would accept the \n character from the nextInt()/nextDouble() as the string input
+        //Solution: Use scanner.nextLine() after nextInt()/nextDouble() method to resolve the input buffer issue
+
+        System.out.print("Enter your age: ");
+        int age = scanner.nextInt();
+        scanner.nextLine();
+
+        System.out.print("Enter your favourite color: ");
+        String color = scanner.nextLine();
+
+        System.out.println("You are " + age + " years old");
+        System.out.println("You like the color " + color);
+
+        //Exercise / Project
+        //Calculate Area of Rectangle
+
+        double width = 0;
+        double height = 0;
+        double area = 0;
+
+        System.out.print("Enter the width: ");
+        width = scanner.nextDouble();
+
+        System.out.print("Enter the height: ");
+        height = scanner.nextDouble();
+
+        area = width * height;
+        System.out.println("The area of rectangle is: " + area + "cm^2");
+
+        scanner.close();
+        //scanner object needs to be closed after use at the end of the program or it might lead to unexpected behaviour
+
+    }
+}
