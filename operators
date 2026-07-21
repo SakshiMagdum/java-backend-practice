@@ -1,0 +1,51 @@
+public class operator {
+
+    public static void main(String[] args){
+
+        //Arithmetic Operators
+        
+        int x = 10;
+        int y = 2;
+        int z;
+
+        //z = x + y; //addition
+        //z = x - y; //substraction
+        //z = x * y; //multiply
+        //z = x / y; //division
+        z = x % y; //remainder
+
+        System.out.println(z);
+        ---------------------------------
+        // Augmented Argument Operator
+
+        int x = 10;
+        int y = 2;
+        
+        //x += y;
+        //x -= y;
+        //x *= y;
+        //x /= y;
+        x %= y;
+
+        System.out.println(x);
+        ----------------------------------
+        //Increment and Decrement Operators
+
+        int x = 1;
+
+        x++; //x = x + 1;
+        x--; //x = x - 1;
+
+        System.out.println(x);
+
+        //ORDER OF OPERATIONS [P-E-M-D-A-S] Parentheses, Exponent, Multiplication, Division, Addition, Substraction
+
+        double result = 3 + 4 * (7 - 5) / 2.0;
+        // 3 + 4 * 2 / 2.0, (7 - 5) = 2
+        // 3 + 8 / 2.0, 4 * 2 = 8
+        // 3 + 4, 8 / 2.0 = 4
+        // 3 + 4 = 7
+
+        System.out.println(result);
+    }
+}
